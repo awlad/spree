@@ -8,12 +8,12 @@
     <%= render partial: 'spree/shared/head' %>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-  <div style="margin-bottom: 100px">
+  <div class="mbf-7">
     <%= render partial: 'spree/shared/header' %>
   </div>
 
-    <div class="container">
-      <div class="row" data-hook>
+    <div class="container bg-transparent">
+      <div class="row mt-3" data-hook>
         <%= spree_breadcrumbs(@taxon) %>
 
         <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>

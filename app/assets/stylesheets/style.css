@@ -1,0 +1,62 @@
+/*product card design*/
+.card {
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-body {
+    padding: 2px 16px;
+}
+.item-product{
+    margin-bottom: 10px;
+}
+.view img, .view video {
+    position: relative;
+    display: block;
+}
+.card .card-body .card-text, .dark-grey-text {
+    color: #4f4f4f;
+}
+.blue-text {
+    color: #2196f3!important;
+}
+.font-weight-bold {
+    font-weight: 700!important;
+}
+
+/*category top nav bar design*/
+.category-nav{
+    background-color: #929fba!important;
+    padding-right: 1rem!important;
+    font-weight: 300;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    margin-top: 0rem !IMPORTANT;
+}
+.navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link {
+    background-color: rgba(255,255,255,.1);
+}
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
+    color: #fff;
+}
+.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    -webkit-transition: .35s;
+    -o-transition: .35s;
+    transition: .35s;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: #9797a9;
+}
+.bg-transparent{
+    background-color: #ecebef;
+}
+.mb-7{
+    margin-bottom: 3rem;
+}
+.mt-3{
+    margin-top: 7rem;
+}
