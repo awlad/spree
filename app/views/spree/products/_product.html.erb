@@ -1,23 +1,15 @@
 <% url = spree.product_path(product, taxon_id: taxon.try(:id)) %>
-<div id="product_<%= product.id %>" class="col-lg-3 col-md-6 mb-4" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+<div id="product_<%= product.id %>" class="col-lg-3 col-md-6 mb-4 text-center" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
   <div class="card">
     <% cache(taxon.present? ? [I18n.locale, current_currency, taxon, product] : cache_key_for_product(product)) do %>
         <div class="view overlay">
           <%= link_to url, itemprop: "url" do %>
-              <%= small_image(product, itemprop: "image") %><br/>
+              <%= product_image(product, itemprop: "image") %><br/>
               <!--<%#= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>-->
               <div class="mask rgba-white-slight waves-effect waves-light"> <%=truncate(product.name, length: 50) %></div>
           <% end %>
         </div>
         <div class="card-body text-center">
-          <h5>
-            <strong>
-              <a href="" class="dark-grey-text">
-                <%= product.name %>
-              </a>
-            </strong>
-          </h5>
-
           <h4 class="font-weight-bold blue-text">
             <strong><span class="price selling lead" itemprop="price" content="<%= (product.price_in(current_currency).amount.nil?)? 0 : product.price_in(current_currency).amount.to_d %>">
           <%= display_price(product) %>
