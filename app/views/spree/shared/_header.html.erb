@@ -1,15 +1,52 @@
-<div id="spree-header">
-  <header id="header" data-hook>
-    <div class="container">
-      <div class="row">
-        <figure id="logo" class="col-md-4 col-sm-3" data-hook>
-          <%= logo %>
-        </figure>
-        <%= render partial: 'spree/shared/nav_bar' %>
-      </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><%#= logo %></a>
     </div>
-  </header>
-  <div class="container">
-    <%= render partial: 'spree/shared/main_nav_bar' %>
-  </div>
-</div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><%= link_to Spree.t(:home), spree.root_path %></li>
+
+      </ul>
+      <%= render partial: 'spree/shared/search' %>
+      <!--<form class="navbar-form navbar-left">-->
+        <!--<div class="form-group">-->
+          <!--<input type="text" class="form-control" placeholder="Search">-->
+        <!--</div>-->
+        <!--<button type="submit" class="btn btn-default">Submit</button>-->
+      <!--</form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li id="link-to-cart" data-hook>
+          <noscript>
+            <%= link_to_cart %>
+          </noscript>
+          &nbsp;
+        </li>
+        <script>Spree.fetch_cart()</script>
+      </ul>
+      <% if spree_current_user %>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-user"></i>
+              <span><%= spree_current_user.email %> <i class="caret"></i></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to Spree.t(:account), spree.edit_user_path(spree_current_user) %></li>
+              <li><%= link_to Spree.t(:logout), spree.admin_logout_path %></li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

@@ -1,12 +1,15 @@
 <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
+<% @taxonomies.each do |taxonomy| %>
+  <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5 category-nav" data-hook>
+    <div class="collapse navbar-collapse abcd-rr">
+        <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
+          <% if taxonomy.root.children.any? %>
+                  <span class="navbar-brand"><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></span>
+                  <!--<h4 class='taxonomy-root'><%#= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></h4>-->
+            <%= taxons_tree_local(taxonomy.root, @taxon, max_level) %>
 
-<nav id="taxonomies" class="sidebar-item" data-hook>
-  <% @taxonomies.each do |taxonomy| %>
-    <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-      <% if taxonomy.root.children.any? %>
-        <h4 class='taxonomy-root'><%= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name) %></h4>
-        <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
-      <% end %>
-    <% end %>
-  <% end %>
-</nav>
+          <% end %>
+        <% end %>
+    </div>
+  </nav>
+<% end %>
