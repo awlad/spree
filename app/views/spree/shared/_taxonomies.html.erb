@@ -1,6 +1,6 @@
 <% max_level = Spree::Config[:max_level_in_taxons_menu] || 1 %>
 <% @taxonomies.each do |taxonomy| %>
-  <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3 mt-3 mb-5 category-nav" data-hook>
+  <nav class="navbar navbar-expand-lg navbar-dark mdb-color lighten-3  mb-5 category-nav" data-hook>
     <div class="collapse navbar-collapse ">
         <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
           <% if taxonomy.root.children.any? %>

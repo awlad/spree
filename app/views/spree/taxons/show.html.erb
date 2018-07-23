@@ -1,7 +1,7 @@
 <h1 class="taxon-title"><%= @taxon.name %></h1>
 
 <% content_for :sidebar do %>
-  <div data-hook="taxon_sidebar_navigation">
+  <div data-hook="taxon_sidebar_navigation" class="col-md-12">
     <%= render partial: 'spree/shared/taxonomies' %>
     <%= render partial: 'spree/shared/filters' if @taxon.leaf? %>
   </div>

@@ -29,34 +29,50 @@
 
 /*category top nav bar design*/
 .category-nav{
-    background-color: #929fba!important;
+    background-color: #e4e4e4 !important;
     padding-right: 1rem!important;
-    font-weight: 300;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-    margin-top: 0rem !IMPORTANT;
+    /*font-weight: 600;*/
+    /*box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 2px 0 rgba(0,0,0,.12);*/
+    /*margin-top: 0rem !IMPORTANT;*/
 }
 .navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link {
-    background-color: rgba(255,255,255,.1);
+    background-color: #555;
+}
+
+.nav-item.active>.nav-link {
+    background-color: #f7f7f7 !important;
 }
 
 .navbar-dark .navbar-brand, .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
-    color: #fff;
+    color: #555;
 }
 .navbar.navbar-dark .navbar-nav .nav-item .nav-link {
-    color: #fff;
+    color: #555;
     -webkit-transition: .35s;
     -o-transition: .35s;
     transition: .35s;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background-color: #9797a9;
+    background-color: #f7f7f7;
+    border-color: #f7f7f7;
 }
 .bg-transparent{
-    background-color: #ecebef;
+    /*background-color: #ecebef;*/
 }
 .mb-7{
     margin-bottom: 3rem;
 }
 .mt-3{
     margin-top: 7rem;
+}
+.navbar-fixed-top {
+    background-color: #f3f5f3;
+}
+
+.price {
+    color: #1c5c92;
+}
+
+#default .category-nav:first-child{
+    /*margin-top: 5rem !IMPORTANT;*/
 }
