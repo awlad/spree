@@ -11,11 +11,11 @@
 
     <%= render partial: 'spree/shared/header' %>
 
-    <div class="container bg-transparent">
+    <div class="container-fluid bg-transparent">
       <div class="row mt-3" data-hook>
         <%= spree_breadcrumbs(@taxon) %>
 
-        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+        <%#= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
         <!--<div id="content" class="<%#= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>-->
         <div id="content" class="col-sm-12" data-hook>
           <%= flash_messages %>

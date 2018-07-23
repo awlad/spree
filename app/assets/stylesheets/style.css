@@ -4,7 +4,7 @@
 }
 
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 5px 5px #f0ebf3;
 }
 
 .card-body {
@@ -16,6 +16,7 @@
 .view img, .view video {
     position: relative;
     display: block;
+    margin: auto;
 }
 .card .card-body .card-text, .dark-grey-text {
     color: #4f4f4f;
@@ -75,4 +76,16 @@
 
 #default .category-nav:first-child{
     /*margin-top: 5rem !IMPORTANT;*/
+}
+
+.taxonomy-container{
+    border-top: 1px solid #dad5d5;
+    margin: 50px 0;
+}
+.navbar-brand{
+    margin-left: 0 !important;
+    color: #555 !important;
+}
+#products{
+    margin: 40px 70px 0 70px;
 }

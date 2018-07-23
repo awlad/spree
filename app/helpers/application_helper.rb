@@ -13,4 +13,15 @@ module ApplicationHelper
     end
   end
 
+  def taxons_tree_local2(root_taxon, current_taxon, max_level = 1)
+    return '' if max_level < 1 || root_taxon.leaf?
+    content_tag :select, class: 'nav navbar-nav mr-auto' do
+      taxons = root_taxon.children.map do |taxon|
+        selected = current_taxon && current_taxon.self_and_ancestors.include?(taxon) ? 'nav-item active ' : 'nav-item'
+        content_tag :option, taxon.name,{ class: selected, selected: selected, value:taxon.name}
+      end
+      safe_join(taxons, "\n")
+    end
+  end
+
 end

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -9,13 +9,13 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brandn mr-5" href="/"><%= image_tag 'logo.jpg', width: 50, height: 50 %></a>
+      <!--<a class="navbar-brandn mr-5" href="/"><%#= image_tag 'logo.jpg', width: 50, height: 50 %></a>-->
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to Spree.t(:home), spree.root_path %></li>
+        <li><%= link_to Spree.t(:store_name), spree.root_path %></li>
       </ul>
       <%= render partial: 'spree/shared/search' %>
       <!--<form class="navbar-form navbar-left">-->
@@ -44,8 +44,13 @@
             </ul>
           </li>
         </ul>
+       <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+            <li id="link-to-signup"><%= link_to Spree.t(:signup), spree.signup_path %></li>
+          </ul>
       <% end %>
-
+      <%= render partial: 'spree/shared/taxonomies' if content_for? :sidebar  %>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
