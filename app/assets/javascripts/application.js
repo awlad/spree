@@ -13,3 +13,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+    $('#product-variants .list-group-item  input').click(function()
+    {
+        $('#product-variants li').removeClass('active');
+        $(this).parents('li').addClass('active');
+    });
+});
